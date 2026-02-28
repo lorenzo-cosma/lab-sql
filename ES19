@@ -1,0 +1,28 @@
+CREATE TABLE tratta(
+idtratta INT(11), 
+idcorsa INT(11), 
+Partenza_Arrivo Varchar(20), 
+KiloMetri INT(255)
+);
+
+
+CREATE TABLE Treno(
+     idtreno varchar(20),
+     postiMAX INT(11),
+     AnnoCostruzione INT(11)
+);
+
+CREATE TABLE corsa(
+    idtreno INT(11) NOT NULL, 
+    idtratta INT(11) NOT NULL,
+    dataP date NOT NULL,
+    orarioP INT(11) NOT NULL,
+    orarioA INT(11) NOT NULL,
+    idcorsa INT(11) NOT NULL
+    );
+
+CREATE TABLE biglietto(
+    idcorsa INT(11) NOT NULL,
+    nome varchar(20) NOT NULL,
+    posto INT(11) NOT NULL
+);
