@@ -1,27 +1,29 @@
 CREATE TABLE tratta(
-idtratta INT(11), 
-idcorsa INT(11), 
-Partenza_Arrivo Varchar(20), 
-KiloMetri INT(255)
+idtratta INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+Partenza_Arrivo Varchar(20) NOT NULL, 
+KiloMetri INT(255) NOT NULL
 );
 
 
 CREATE TABLE Treno(
-     idtreno varchar(20),
-     postiMAX INT(11),
-     AnnoCostruzione INT(11)
+     idtreno varchar(20) NOT NULL PRIMARY KEY,
+     postiMAX INT(11) NOT NULL,
+     AnnoCostruzione INT(11) NOT NULL
 );
 
 CREATE TABLE corsa(
-    idtreno INT(11) NOT NULL, 
+    idtreno VARCHAR(11) NOT NULL, 
     idtratta INT(11) NOT NULL,
     dataP date NOT NULL,
     orarioP INT(11) NOT NULL,
     orarioA INT(11) NOT NULL,
-    idcorsa INT(11) NOT NULL
+    idcorsa INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT
+    foreign key(idtreno) references Treno(idtreno)
+    foreign key(idtratta) references tratta(idtratta)
     );
 
 CREATE TABLE biglietto(
+    idbiglietto(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     idcorsa INT(11) NOT NULL,
     nome varchar(20) NOT NULL,
     posto INT(11) NOT NULL
