@@ -1,0 +1,6 @@
+domanda 1, risposta:
+SELECT * FROM `4CTL_modelli_prodotto`
+domanda 2,risposta:
+SELECT nome,prezzo_listino FROM `4CTL_modelli_prodotto`
+domanda 3,risposta:
+SELECT * FROM `4CTL_modelli_prodotto` HAVING SUM( prezzo_listino ) < 600
