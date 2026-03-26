@@ -1,6 +1,31 @@
 domanda 1, risposta:
-SELECT * FROM `4CTL_modelli_prodotto`
+SELECT * FROM 4CTL_modelli_prodotto
+
 domanda 2,risposta:
-SELECT nome,prezzo_listino FROM `4CTL_modelli_prodotto`
+SELECT nome,prezzo_listino FROM 4CTL_modelli_prodotto
+
 domanda 3,risposta:
-SELECT * FROM `4CTL_modelli_prodotto` HAVING SUM( prezzo_listino ) < 600
+SELECT nome,prezzo_listino FROM 4CTL_modelli_prodotto WHERE prezzo_listino < 600
+
+domanda 4,risposta:
+SELECT * FROM 4CTL_modelli_prodotto WHERE nome LIKE %Samsung%
+
+domanda 5,risposta:
+SELECT nome FROM 4CTL_clienti WHERE nome LIKE %a%
+
+domanda 6,risposta:
+SELECT * FROM 4CTL_modelli_prodotto ORDER BY prezzo_listino DESC
+
+domanda 7,risposta:
+SELECT distinct categoria FROM 4CTL_modelli_prodotto
+
+domanda 8,risposta:
+SELECT * FROM 4CTL_prodotti ORDER BY data_arrivo ASC LIMIT 10;
+
+domanda 9,risposta:
+SELECT * FROM 4CTL_clienti ORDER BY cognome,nome ASC
+
+domanda 10,risposta:
+SELECT * FROM 4CTL_ordini WHERE data_ordine like '%2024-06%'
+
+doamnda 11,risposta:
